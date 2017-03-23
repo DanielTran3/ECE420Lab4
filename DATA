@@ -1,0 +1,220 @@
+=====Evaluation for Lab 4 code.=====
+Enter the exacutable file name for generating data and press [ENTER] (default is datatrim):
+datagen
+Enter the exacutable file name for serial testing and press [ENTER] (default is serialtester):
+
+Enter the exacutable file name for matrix multiplication and press [ENTER] (default is main):
+
+Evaluating the results...
+Generating the testing data...
+There are 1112 nodes and 208960 edges in the sub dataset including the added edges for the nodes with no outgoing links. 
+SAMPLE 5300
+1 threads
+Attempt Number 1: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 2: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 3: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 4: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Time of calculation: 0.015013
+4 threads
+Attempt Number 1: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 2: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 3: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 4: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Time of calculation: 0.004397
+Generating the testing data...
+There are 5424 nodes and 3629571 edges in the sub dataset including the added edges for the nodes with no outgoing links. 
+SAMPLE 13000
+1 threads
+Attempt Number 1: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 2: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 3: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 4: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Time of calculation: 0.267399
+4 threads
+Attempt Number 1: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 2: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 3: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 4: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Time of calculation: 0.072439
+bash-4.2$ ./check.sh 
+=====Evaluation for Lab 4 code.=====
+Enter the exacutable file name for generating data and press [ENTER] (default is datatrim):
+datagen
+Enter the exacutable file name for serial testing and press [ENTER] (default is serialtester):
+
+Enter the exacutable file name for matrix multiplication and press [ENTER] (default is main):
+seq
+Evaluating the results...
+Generating the testing data...
+There are 1112 nodes and 208960 edges in the sub dataset including the added edges for the nodes with no outgoing links. 
+SAMPLE 5300
+1 threads
+Attempt Number 1: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 2: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 3: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 4: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Time of calculation: 0.075249
+4 threads
+Attempt Number 1: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 2: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 3: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 4: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Time of calculation: 0.077283
+Generating the testing data...
+There are 5424 nodes and 3629571 edges in the sub dataset including the added edges for the nodes with no outgoing links. 
+SAMPLE 13000
+1 threads
+Attempt Number 1: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 2: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 3: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 4: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Time of calculation: 1.315116
+4 threads
+Attempt Number 1: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 2: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 3: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 4: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Time of calculation: 1.422822
+bash-4.2$ ./check.sh 
+=====Evaluation for Lab 4 code.=====
+Enter the exacutable file name for generating data and press [ENTER] (default is datatrim):
+datagen
+Enter the exacutable file name for serial testing and press [ENTER] (default is serialtester):
+
+Enter the exacutable file name for matrix multiplication and press [ENTER] (default is main):
+send_and_recv
+Evaluating the results...
+Generating the testing data...
+There are 1112 nodes and 208960 edges in the sub dataset including the added edges for the nodes with no outgoing links. 
+SAMPLE 5300
+1 threads
+Attempt Number 1: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 2: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 3: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 4: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Time of calculation: 0.015231
+4 threads
+Attempt Number 1: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 2: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 3: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 4: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Time of calculation: 0.005042
+Generating the testing data...
+There are 5424 nodes and 3629571 edges in the sub dataset including the added edges for the nodes with no outgoing links. 
+SAMPLE 13000
+1 threads
+Attempt Number 1: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 2: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 3: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 4: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Time of calculation: 0.278981
+4 threads
+Attempt Number 1: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 2: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 3: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 4: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Time of calculation: 0.080886
+bash-4.2$ ./check.sh 
+=====Evaluation for Lab 4 code.=====
+Enter the exacutable file name for generating data and press [ENTER] (default is datatrim):
+datagen
+Enter the exacutable file name for serial testing and press [ENTER] (default is serialtester):
+
+Enter the exacutable file name for matrix multiplication and press [ENTER] (default is main):
+bcast
+Evaluating the results...
+Generating the testing data...
+There are 1112 nodes and 208960 edges in the sub dataset including the added edges for the nodes with no outgoing links. 
+SAMPLE 5300
+1 threads
+Attempt Number 1: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 2: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 3: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 4: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Time of calculation: 0.015189
+4 threads
+Attempt Number 1: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 2: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 3: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Attempt Number 4: The relative error against the reference result is 3.087561e-07 .
+Congratulations! Your result is correct!
+Time of calculation: 0.023097
+Generating the testing data...
+There are 5424 nodes and 3629571 edges in the sub dataset including the added edges for the nodes with no outgoing links. 
+SAMPLE 13000
+1 threads
+Attempt Number 1: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 2: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 3: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 4: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Time of calculation: 0.273873
+4 threads
+Attempt Number 1: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 2: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 3: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Attempt Number 4: The relative error against the reference result is 8.550714e-08 .
+Congratulations! Your result is correct!
+Time of calculation: 0.073429
+
