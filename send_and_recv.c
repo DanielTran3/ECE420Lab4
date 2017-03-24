@@ -50,7 +50,6 @@ int main (int argc, char* argv[]){
 	GET_TIME(start);
 	int loop = 0;
 	do{
-		printf("LOOP NUMBER: %i \n", loop);
         vec_cp(r, r_pre, nodecount);
         for ( i = start_index; i < end_index; ++i){
             r[i] = 0;
@@ -58,7 +57,6 @@ int main (int argc, char* argv[]){
                 r[i] += r_pre[nodehead[i].inlinks[j]] / num_out_links[nodehead[i].inlinks[j]];
             r[i] *= DAMPING_FACTOR;
             r[i] += damp_const;
-			//send_buffer[i % chunk_size] = r[i];
         }
 
 		for (i = 0; i < comm_sz; i++) {
@@ -68,16 +66,10 @@ int main (int argc, char* argv[]){
 						MPI_Send(&r[start_index], chunk_size, MPI_DOUBLE, j, 0, MPI_COMM_WORLD); 
 					}
 				}
-				//MPI_Bcast(send_buffer, chunk_size, MPI_DOUBLE, my_rank, MPI_COMM_WORLD);
-				printf("BROADCASTED with %i ------ Sending %f \n", my_rank, r[start_index]);
 			}
 			else {
-				printf("RECEVING WITH %i \n", my_rank);
-				printf("OLD VALUE: %f\n", r[i * chunk_size]);
-				MPI_Recv(&r[i * chunk_size], chunk_size, MPI_DOUBLE, i, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-				printf("GOT IT as %i with NEW VALUE: %f\n", my_rank, r[i * chunk_size]);	
+				MPI_Recv(&r[i * chunk_size], chunk_size, MPI_DOUBLE, i, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);	
 			}
-			printf("ENDED LOOP WITH %i \n", my_rank);
 		}
 		loop++;
     }while(rel_error(r, r_pre, nodecount) >= EPSILON);
@@ -85,6 +77,7 @@ int main (int argc, char* argv[]){
 	if (my_rank == 0) {
 		GET_TIME(end); 
 		Lab4_saveoutput(r, nodecount, end-start);
+		printf("%f\n", end-start);
 	}
     // post processing
     node_destroy(nodehead, nodecount);

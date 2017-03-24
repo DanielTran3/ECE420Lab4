@@ -47,6 +47,7 @@ int main (int argc, char* argv[]){
 	GET_TIME(end);    
 
 	Lab4_saveoutput(r, nodecount, end-start);
+	printf("%f\n", end-start);
     // post processing
     node_destroy(nodehead, nodecount);
     free(num_in_links); free(num_out_links);

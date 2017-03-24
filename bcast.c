@@ -50,7 +50,6 @@ int main (int argc, char* argv[]){
 	GET_TIME(start);
 	int loop = 0;
 	do{
-		printf("LOOP NUMBER: %i \n", loop);
         vec_cp(r, r_pre, nodecount);
         for ( i = start_index; i < end_index; ++i){
             r[i] = 0;
@@ -62,25 +61,15 @@ int main (int argc, char* argv[]){
         }
 
 		for (i = 0; i < comm_sz; i++) {
-			//if (my_rank == i) {
-				//MPI_Bcast(&r[start_index], chunk_size, MPI_DOUBLE, my_rank, MPI_COMM_WORLD);
-				//printf("BROADCASTED with %i ------ Sending %f \n", my_rank, r[start_index]);
-			//}
-			//else {
-				//printf("RECEVING WITH %i \n", my_rank);
-				//printf("OLD VALUE: %f\n", r[i * chunk_size]);
-				//MPI_Bcast(&r[i * chunk_size], chunk_size, MPI_DOUBLE, i, MPI_COMM_WORLD);
-				//printf("GOT IT as %i with NEW VALUE: %f\n", my_rank, r[i * chunk_size]);	
-			//}
 			MPI_Bcast(&r[i * chunk_size], chunk_size, MPI_DOUBLE, i, MPI_COMM_WORLD);
-			printf("ENDED LOOP WITH %i \n", my_rank);
 		}
 		loop++;
     }while(rel_error(r, r_pre, nodecount) >= EPSILON);
 
 	if (my_rank == 0) {
 		GET_TIME(end); 
-		Lab4_saveoutput(r, nodecount, end-start);
+		//Lab4_saveoutput(r, nodecount, end-start);
+		printf("%f\n", end-start);
 	}
     // post processing
     node_destroy(nodehead, nodecount);

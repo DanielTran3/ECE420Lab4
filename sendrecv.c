@@ -52,7 +52,6 @@ int main (int argc, char* argv[]){
 	int loop = 0;
 	int counter;
 	do{
-		printf("LOOP NUMBER: %i \n", loop);
         vec_cp(r, r_pre, nodecount);
         for ( i = start_index; i < end_index; ++i){
             r[i] = 0;
@@ -68,7 +67,6 @@ int main (int argc, char* argv[]){
 			
 			MPI_Sendrecv(&r[chunk_size * counter], chunk_size, MPI_DOUBLE, (my_rank + 1) % comm_sz, 0, &r[((counter + comm_sz - 1) % comm_sz) * chunk_size], chunk_size, MPI_DOUBLE,	(my_rank + comm_sz - 1) % comm_sz, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 
-			printf("ENDED LOOP WITH %i \n", my_rank);
 			if (counter == 0) {
 				counter = comm_sz;				
 			}
@@ -79,7 +77,8 @@ int main (int argc, char* argv[]){
 
 	if (my_rank == 0) {
 		GET_TIME(end); 
-		Lab4_saveoutput(r, nodecount, end-start);
+		//Lab4_saveoutput(r, nodecount, end-start);
+		printf("%f\n", end-start);
 	}
     // post processing
     node_destroy(nodehead, nodecount);

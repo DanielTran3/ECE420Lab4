@@ -16,7 +16,8 @@ int main (int argc, char* argv[]){
     int *num_in_links, *num_out_links;
     double *r, *r_pre;
     int i, j, chunk_size, start_index, end_index;
-    double damp_const;
+	int array_flag = 0;    
+	double damp_const;
     double start, end;
 	int comm_sz, my_rank;
 
@@ -49,50 +50,38 @@ int main (int argc, char* argv[]){
     // CORE CALCULATION
 	GET_TIME(start);
 	int loop = 0;
-	do{
-		printf("LOOP NUMBER: %i \n", loop);
-		        
-		vec_cp(r, r_pre, nodecount);
+	do{   
+		if (array_flag == 1) {
+			vec_cp(recv_buffer, r_pre, nodecount);
+		}
+		else {
+			array_flag = 1;
+			vec_cp(r, r_pre, nodecount);
+		}
         for ( i = start_index; i < end_index; ++i){
             r[i] = 0;
             for ( j = 0; j < nodehead[i].num_in_links; ++j)
                 r[i] += r_pre[nodehead[i].inlinks[j]] / num_out_links[nodehead[i].inlinks[j]];
             r[i] *= DAMPING_FACTOR;
             r[i] += damp_const;
-			//send_buffer[i % chunk_size] = r[i];
         }
-
-		//for (i = 0; i < comm_sz; i++) {
-			//if (my_rank == i) {
-				//MPI_Bcast(&r[start_index], chunk_size, MPI_DOUBLE, my_rank, MPI_COMM_WORLD);
-				//printf("BROADCASTED with %i ------ Sending %f \n", my_rank, r[start_index]);
-			//}
-			//else {
-				//printf("RECEVING WITH %i \n", my_rank);
-				//printf("OLD VALUE: %f\n", r[i * chunk_size]);
-				//MPI_Bcast(&r[i * chunk_size], chunk_size, MPI_DOUBLE, i, MPI_COMM_WORLD);
-				//printf("GOT IT as %i with NEW VALUE: %f\n", my_rank, r[i * chunk_size]);	
-			//}
-			//if (my_rank != i) {
-				//MPI_Allgather(&r[start_index], chunk_size, MPI_DOUBLE, &r[i * chunk_size], chunk_size, MPI_DOUBLE, MPI_COMM_WORLD);
-			//}
-			
-			//MPI_Bcast(&r[i * chunk_size], chunk_size, MPI_DOUBLE, i, MPI_COMM_WORLD);
-			//printf("ENDED LOOP WITH %i \n", my_rank);
-		//}
-		
 		MPI_Allgather(&r[start_index], chunk_size, MPI_DOUBLE, &recv_buffer, chunk_size, MPI_DOUBLE, MPI_COMM_WORLD);
-		vec_cp(recv_buffer, r, nodecount);
-		printf("ENDED LOOP %i WITH %i \n", loop, my_rank);
+		//vec_cp(recv_buffer, r, nodecount);
 		loop++;
-    }while(rel_error(r, r_pre, nodecount) >= EPSILON);
+    }while(rel_error(recv_buffer, r_pre, nodecount) >= EPSILON);
 
 	if (my_rank == 0) {
-		GET_TIME(end); 
-		Lab4_saveoutput(r, nodecount, end-start);
-	}
+		GET_TIME(end);
+		//if (array_flag == 1) {
+			//Lab4_saveoutput(recv_buffer, nodecount, end-start);
+		//}
+		//else {
+			//Lab4_saveoutput(r, nodecount, end-start);
+		//}	
+		printf("%f\n", end-start);
+    }
     // post processing
-    node_destroy(nodehead, nodecount);
+	node_destroy(nodehead, nodecount);
     free(num_in_links); free(num_out_links);
     free(r); free(r_pre);
 
