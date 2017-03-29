@@ -20,8 +20,8 @@ int main (int argc, char* argv[]){
     // Pointers to data that hold iterative data of PageRank Algorithm
     double *r, *r_pre;
 
-    // Looping variables, chunk_size, and starting and ending index of split
-    int i, j, chunk_size, start_index, end_index;
+    // Looping variables, chunk_size, and starting index of split
+    int i, j, chunk_size, start_index;
 
     // Damping Constant
     double damp_const;
@@ -49,10 +49,9 @@ int main (int argc, char* argv[]){
     // using pass-by-reference
     if (node_init(&nodehead, num_in_links, num_out_links, 0, nodecount)) return 254;
     
-    // Calculate chunk_size, start and end index
+    // Calculate chunk_size, and start index
 	chunk_size = nodecount/comm_sz;
 	start_index = chunk_size * my_rank;
-	end_index = start_index + chunk_size;	
 
 	// Allocate memory for the iterative steps of PageRank
     r = malloc(nodecount * sizeof(double));

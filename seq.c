@@ -25,8 +25,8 @@ int main (int argc, char* argv[]){
     // Damping Constant
     double damp_const;
 
-    // Variables to hold start time, end time, and error calculation
-    double start, end, error;
+    // Variables to hold start time, and end time
+    double start, end;
 
 	// Read the data_input file and get the number of nodes, list of in links,
 	// and list of out links using pass-by-reference

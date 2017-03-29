@@ -1,0 +1,33 @@
+README:
+
+To make program:
+Run the make command with the following different arguments:
+	-> make seq 	         ---- Makes sequential program
+	-> make send_and_recv    ---- Makes simple parallel program
+	-> make sendrecv         ---- Makes optimized version of parallel program
+	-> make bcast		 ---- Makes task version of parallel program
+	-> make main	         ---- Makes sections version of parallel program
+	-> make all              ---- Makes all executables above
+
+To run program:
+	-> mpirun -n ./seq                      ------ (Number of processes required)
+	-> mpirun -n ./send_and_recv		------ (Number of processes required)
+	-> mpirun -n ./sendrecv    		------ (Number of processes required)
+	-> mpirun -n ./bcast			------ (Number of processes required)
+	-> mpirun -n ./main			------ (Number of processes required)
+
+*Please ensure that a file called data_input is present in directory to run correctly
+
+Information:
+
+seq - Is the sequential version of the page rank algorithm
+
+send_and_recv - The version of the page rank algorithm, where one process sends all of its information to other processes that are block-waiting to receive the data.
+
+sendrecv - The version of the page rank algorithm that uses the sendrecv command, and all processes send what they receive to the next process (starting with their own information).
+
+bcast - The version of the page rank algorithm, where all of the processes broadcast their data to all other processes.
+
+main - The version of the page rank algorithm that uses allgather.
+
+We created different implementations of MPI to show the different speed, advantages, disadvantages, and comparsions of each in comparison to a sequential version. Different implementations provide different speedups based on the number of processes and the number of nodes used.
